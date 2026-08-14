@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Job, JobStats, CandidateProfile } from './types';
 
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = import.meta.env.PROD ? '/api' : 'http://localhost:3001/api';
 
 export const api = {
   getJobs: async (search?: string, status?: string): Promise<Job[]> => {

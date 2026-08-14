@@ -15,12 +15,11 @@ RUN cd client && npm install
 # Copy source code
 COPY . .
 
-# Build the client
-RUN cd client && npm run build
+# Build both client and server
+RUN npm run build
 
 # Expose the server port
 EXPOSE 3001
 
-# Start the server (which should serve the client in a real prod environment, but here we just start the backend)
-# Wait, let's just run the dev server or add a start script
-CMD ["npm", "run", "dev"]
+# Start the server (which will also serve the static client)
+CMD ["npm", "start"]

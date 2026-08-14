@@ -20,6 +20,13 @@ app.use('/screenshots', express.static(join(process.cwd(), 'screenshots')));
 // API routes
 app.use('/api', routes);
 
+// Serve frontend in production
+const clientBuildPath = join(process.cwd(), '../client/dist');
+app.use(express.static(clientBuildPath));
+app.get('*', (req, res) => {
+  res.sendFile(join(clientBuildPath, 'index.html'));
+});
+
 // Initialize database (async with sql.js) and start server
 async function start() {
   await initDatabase();

@@ -9,6 +9,7 @@
     "dev:client": "cd client && npm run dev",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "build": "cd server && npm run build && cd ../client && npm run build",
+    "start": "cd server && npm start",
     "scrape": "cd server && npm run scrape",
     "test": "cd server && npm test",
     "setup": "npm run install:all && cd server && npm run create-resume && npx playwright install chromium"
