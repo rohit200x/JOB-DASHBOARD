@@ -9,6 +9,8 @@ function normalizeJob(ghJob: any, boardToken: string): Job {
     department: ghJob.departments?.[0]?.name || 'General',
     url: ghJob.absolute_url,
     company: boardToken.charAt(0).toUpperCase() + boardToken.slice(1),
+    description: `${ghJob.title} position at ${boardToken.charAt(0).toUpperCase() + boardToken.slice(1)}. Apply to join the team and help build the future.`,
+    source: `Greenhouse (${boardToken})`,
     created_at: ghJob.updated_at || new Date().toISOString(),
     status: 'not_applied',
     failure_reason: null,
@@ -59,9 +61,9 @@ describe('Job Scraper', () => {
 
   it('should deduplicate jobs by URL', () => {
     const jobs: Job[] = [
-      { id: '1', title: 'A', location: '', department: '', url: 'https://example.com/1', company: 'X', created_at: '', status: 'not_applied', failure_reason: null, screenshot_path: null, applied_at: null },
-      { id: '2', title: 'B', location: '', department: '', url: 'https://example.com/1', company: 'Y', created_at: '', status: 'not_applied', failure_reason: null, screenshot_path: null, applied_at: null },
-      { id: '3', title: 'C', location: '', department: '', url: 'https://example.com/2', company: 'Z', created_at: '', status: 'not_applied', failure_reason: null, screenshot_path: null, applied_at: null },
+      { id: '1', title: 'A', location: '', department: '', url: 'https://example.com/1', company: 'X', description: '', source: '', created_at: '', status: 'not_applied', failure_reason: null, screenshot_path: null, applied_at: null },
+      { id: '2', title: 'B', location: '', department: '', url: 'https://example.com/1', company: 'Y', description: '', source: '', created_at: '', status: 'not_applied', failure_reason: null, screenshot_path: null, applied_at: null },
+      { id: '3', title: 'C', location: '', department: '', url: 'https://example.com/2', company: 'Z', description: '', source: '', created_at: '', status: 'not_applied', failure_reason: null, screenshot_path: null, applied_at: null },
     ];
     const deduped = deduplicateJobs(jobs);
     expect(deduped).toHaveLength(2);
