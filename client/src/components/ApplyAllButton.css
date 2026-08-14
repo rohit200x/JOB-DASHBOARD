@@ -1,0 +1,42 @@
+.apply-all-btn {
+  background: var(--text);
+  color: white;
+  border-color: var(--text);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+
+.apply-all-btn:hover:not(:disabled) {
+  background: #374151;
+  border-color: #374151;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.apply-all-btn.confirming {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.apply-all-btn.confirming:hover {
+  background: #c2410c;
+}
+
+.apply-all-btn.applying {
+  background: var(--blue);
+  border-color: var(--blue);
+  cursor: wait;
+}
+
+.apply-all-btn:disabled {
+  opacity: 0.6;
+}
+
+.btn-icon {
+  font-size: 14px;
+}

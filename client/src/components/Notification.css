@@ -1,0 +1,40 @@
+.notification-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.notification-toast {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  pointer-events: auto;
+  animation: slideIn 300ms cubic-bezier(0.16, 1, 0.3, 1), fadeOut 300ms ease 4.7s forwards;
+  max-width: 350px;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text);
+  border-left: 4px solid var(--border);
+}
+
+.notification-toast--success { border-left-color: var(--green); }
+.notification-toast--error { border-left-color: var(--red); }
+.notification-toast--info { border-left-color: var(--blue); }
+.notification-toast--warning { border-left-color: var(--orange); }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

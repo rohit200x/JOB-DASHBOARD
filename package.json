@@ -1,0 +1,22 @@
+{
+  "name": "greenhouse-application-dashboard",
+  "version": "1.0.0",
+  "description": "Automated Job Application Dashboard - Scrapes Greenhouse job listings and automates the application process with browser automation",
+  "private": true,
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "cd server && npm run build && cd ../client && npm run build",
+    "scrape": "cd server && npm run scrape",
+    "test": "cd server && npm test",
+    "setup": "npm run install:all && cd server && npm run create-resume && npx playwright install chromium"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "dependencies": {
+    "axios": "^1.19.0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "firstName": "Rohit ",
+  "lastName": "Shendurkar",
+  "email": "rohitshendurkar2017@gmail.com",
+  "phone": "+91 8421252700",
+  "currentCompany": "",
+  "currentTitle": "Fresher",
+  "linkedinUrl": "https://linkedin.com/in/example",
+  "websiteUrl": "https://github.com/example",
+  "location": "Bangalore",
+  "howDidYouHear": "Job Board",
+  "yearsOfExperience": "0",
+  "salaryExpectation": "",
+  "startDate": "2025-02-01",
+  "workAuthorization": "Yes",
+  "gender": "Decline to self-identify",
+  "race": "Decline to self-identify",
+  "veteranStatus": "I am not a protected veteran",
+  "disabilityStatus": "I do not wish to answer",
+  "education": {
+    "school": "Example University",
+    "degree": "Bachelor of Engineering",
+    "fieldOfStudy": "Computer Science",
+    "gpa": "3.7",
+    "startDate": "2020-08-01",
+    "endDate": "2024-05-15"
+  },
+  "skills": "JavaScript, React, Node.js, Python",
+  "experience": "Fresher",
+  "github": "https://github.com/example",
+  "resumePath": "candidate/resume.pdf",
+  "coverLetter": "I am writing to express my interest in this position. With my background in computer science and passion for building quality software, I believe I would be a strong addition to your team."
+}

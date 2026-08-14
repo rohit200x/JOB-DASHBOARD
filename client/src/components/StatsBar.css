@@ -1,0 +1,50 @@
+.stats-bar {
+  display: flex;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 24px 0 20px;
+}
+
+.stats-bar__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 8px;
+  background: white;
+  min-width: 0;
+}
+
+.stats-bar__count {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.stats-bar__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.stats-bar__item--total .stats-bar__count { color: var(--text); }
+.stats-bar__item--idle .stats-bar__count { color: var(--gray); }
+.stats-bar__item--progress .stats-bar__count { color: var(--blue); }
+.stats-bar__item--filled .stats-bar__count { color: var(--purple); }
+.stats-bar__item--review .stats-bar__count { color: var(--orange); }
+.stats-bar__item--success .stats-bar__count { color: var(--green); }
+.stats-bar__item--failed .stats-bar__count { color: var(--red); }
+
+@media (max-width: 640px) {
+  .stats-bar { flex-wrap: wrap; }
+  .stats-bar__item { min-width: 70px; padding: 10px 6px; }
+}

@@ -1,0 +1,110 @@
+.search-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-bar__input-wrapper {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+}
+
+.search-bar__icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  pointer-events: none;
+  color: var(--text-muted);
+}
+
+.search-bar__input {
+  width: 100%;
+  padding: 8px 30px 8px 32px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text);
+  transition: border-color 120ms;
+}
+
+.search-bar__input:focus {
+  border-color: var(--border-focus);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+}
+
+.search-bar__input::placeholder { color: var(--text-muted); }
+
+.search-bar__clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 4px;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.search-bar__clear:hover { color: var(--text); background: var(--bg-hover); }
+
+.search-bar__select {
+  padding: 8px 28px 8px 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 13px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%239ca3af' d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  cursor: pointer;
+}
+
+.search-bar__select:focus {
+  border-color: var(--border-focus);
+  outline: none;
+}
+
+.search-bar__scrape-btn {
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.search-bar__scrape-btn:hover:not(:disabled) {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.search-bar__spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--border);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .search-bar { flex-direction: column; }
+  .search-bar__input-wrapper, .search-bar__select, .search-bar__scrape-btn { width: 100%; }
+}
